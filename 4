@@ -1,0 +1,30 @@
+#write your validate script here
+#I used ChatGPT-5,6 Luna.
+#I don't know how to process step, makesure that interest belongs to creative, culture, sport, volunteering or social.
+#Then Gpt gives me the function if variable not in [list]:
+#I get some small errors,like social spell it to socail I can't find it easily so ask gpt for help
+social_score = 0#set the initial value of socail_score and skill_score
+skill_score = 0
+interest = input("What is your main interest area? ")
+interest = interest.lower()#convert the input to lowercase so that it can be identified following.
+if interest not in ["academic","creative","culture","sport","volunteering","social"]:
+    print("Please enter a valid interest area.")
+else:
+    hobbies = input("What are your hobbies? ")
+    social = input("Do you want to meet new people? ")
+    skill = input("Do you want to build new skills? ")
+    
+    social = social.lower()#convert the input to lowercase so that it can be identified following.
+    skill = skill.lower()#convert the input to lowercase so that it can be identified following.
+    if social == "yes":
+        social_score = social_score + 60
+    if interest in ["culture","sport","social"]:
+        social_score = social_score + 20
+    if skill == "yes":
+        skill_score = skill_score + 60
+    if interest in ["academic","creative","volunteering"]:
+        skill_score = skill_score + 20
+    print(f"Your club style is: {interest}")
+    print(f"Social score: {social_score}")
+    print(f"Skill score: {skill_score}")
+
