@@ -1,0 +1,30 @@
+#write your validate script here
+#I used ChatGPT-5,6 Luna.
+#when the area includes both int and alphabet I don't know how to make the python distinguish
+#whether the all of variable are alphabet,then I ask the gpt.
+#In this assignment,when I want to enter the first if when the name isn't alpha
+#But the name has the space,when the space is existed it will decide the name isn't alphabet
+#I don't know how to delete the space in name and ask gpt for help.
+name = input("Enter your full name: ")
+area = input("Enter your study area: ")
+study_year = int(input("Enter your year of study: "))
+len_name = len(name)
+component_name = name.replace(" ", "").isalpha()#use the content that after comma to replace the content that before the comma
+component_area = area.isalpha()#isalpha checks whether all characters in a string are letters.
+if len_name > 25 or len_name < 1 or component_name == False:
+    print("Incorrect name: Please enter a name between 1 and 25 characters.")
+elif component_area == False:
+    print("Incorrect study area: Please enter a study area using letters and spaces only.")
+elif study_year >6 or study_year< 1:
+    print("Incorrect year: Please enter a year between 1 and 6.")
+elif len_name <= 25 or len_name > 1 and component_name == True and component_area == True and study_year <=6 or study_year>= 1:
+    print("==================================================")
+    print("|                Profile created!                |")
+    print("==================================================")
+    print("| Field         | Your Details                   |")
+    print("==================================================")
+    print(f"| Name          | {name:<30} |")
+    print(f"| Study Area    | {area:<30} |")
+    print(f"| Year of Study | {study_year:<30} |")
+    print("==================================================")
+    
